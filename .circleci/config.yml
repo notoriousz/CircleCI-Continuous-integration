@@ -18,10 +18,18 @@ jobs:
 
       - run:
           name: Run tests
-          # This assumes pytest is installed via the install-package step above
           command: |
             pytest
+  
+  download-operations:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
 
+      - run:
+          name: Download Operations
+          command: |
+            python3 manage.py
 
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -29,4 +37,10 @@ workflows:
   deployment: # This is the name of the workflow
     # Inside the workflow, you define the jobs you want to run.
     jobs:
+
+      - download-operations:
+        require:
+          - build-and-test
+
       - build-and-test
+
