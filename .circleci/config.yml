@@ -37,10 +37,5 @@ workflows:
   deployment: # This is the name of the workflow
     # Inside the workflow, you define the jobs you want to run.
     jobs:
-
-      - download-operations:
-        require:
-          - build-and-test
-
+      - download-operations
       - build-and-test
-
