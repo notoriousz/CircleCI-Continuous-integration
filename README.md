@@ -3,7 +3,7 @@
 ## What is it
 
 - This is a application to learn about CircleCI.
-- The code is simple, because the focus is on the CI.
+- The code is simple, because the focus is on the Continuous Integration.
 - The full config is on the path .circleci/config.yml
 
 ## Results
